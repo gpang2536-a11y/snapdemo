@@ -1,0 +1,204 @@
+.controls #btn-resume {
+    flex-basis: 100%;
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+
+/* README: 使用 CSS 變數設定主題色，響應式設計，觸控按鈕有反饋。 */
+:root {
+    --bg: #222;
+    --accent: #4caf50;
+    --snake: #fff176;
+    --food: #e57373;
+    --overlay-bg: rgba(0, 0, 0, 0.6);
+    --font: 'Segoe UI', 'Noto Sans TC', Arial, sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: #fff;
+    font-family: var(--font);
+    margin: 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 8px;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.scoreboard {
+    display: flex;
+    gap: 24px;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.canvas-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 1/1;
+    background: #111;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px #0008;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    outline: 2px solid var(--accent);
+    border-radius: 8px;
+    background: #222;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--overlay-bg);
+
+    .controls button {
+        margin-bottom: 0;
+    }
+
+    .controls #btn-restart {
+        flex-basis: 100%;
+        margin-top: 12px;
+        margin-bottom: 0;
+    }
+
+    .controls button:active {
+        background: #388e3c;
+    }
+
+    z-index: 2;
+}
+
+.overlay-btn {
+    margin: 8px;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #0004;
+    transition: background 0.2s;
+}
+
+.overlay-btn:active {
+    background: #388e3c;
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.controls button {
+    padding: 8px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #0004;
+    transition: background 0.2s;
+}
+
+.controls button:active {
+    background: #388e3c;
+}
+
+.touch-controls {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 10;
+}
+
+.touch-controls>div {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.touch-btn {
+    width: 56px;
+    height: 56px;
+    font-size: 2rem;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px #0004;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    outline: 2px solid transparent;
+}
+
+.touch-btn:active,
+.touch-btn:focus {
+    background: #388e3c;
+    transform: scale(0.95);
+    outline: 2px solid #fff;
+}
+
+.difficulty {
+    margin-top: 12px;
+    font-size: 1rem;
+    color: #fff;
+}
+
+select {
+    font-size: 1rem;
+    padding: 4px 12px;
+    border-radius: 6px;
+    border: none;
+    background: #333;
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 4px;
+    }
+
+    .canvas-wrapper {
+        max-width: 98vw;
+    }
+
+    .touch-controls {
+        bottom: 16px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}

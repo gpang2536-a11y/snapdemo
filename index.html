@@ -1,0 +1,45 @@
+<!-- README: 直接開啟本檔案即可遊玩。方向鍵/WASD/觸控控制蛇，P鍵或按鈕可暫停/恢復。-->
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貪食蛇 Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="game.js" defer></script>
+</head>
+
+<body>
+    <main class="container" aria-label="貪食蛇遊戲">
+        <h1>貪食蛇 Snake</h1>
+        <div class="scoreboard">
+            <span id="score" aria-label="目前分數">分數：0</span>
+            <span id="highscore" aria-label="最高分">最高分：0</span>
+            <span id="level" aria-label="等級">等級：1</span>
+        </div>
+        <div class="canvas-wrapper">
+            <canvas id="game" width="480" height="480" tabindex="0" aria-label="遊戲畫面"></canvas>
+            <div id="overlay" class="overlay" aria-live="polite" hidden>
+                <div id="overlay-content"></div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="btn-start" aria-label="開始遊戲">開始</button>
+            <button id="btn-pause" aria-label="暫停">暫停</button>
+            <button id="btn-share" aria-label="分享分數">分享分數</button>
+            <button id="btn-restart" aria-label="重新開始">重新開始</button>
+            <button id="btn-resume" aria-label="恢復" hidden>恢復</button>
+        </div>
+        <div class="difficulty">
+            <label for="difficulty-select">難度：</label>
+            <select id="difficulty-select" aria-label="選擇難度">
+                <option value="easy">簡單</option>
+                <option value="normal" selected>普通</option>
+                <option value="hard">困難</option>
+            </select>
+        </div>
+    </main>
+</body>
+
+</html>
